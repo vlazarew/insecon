@@ -1,0 +1,19 @@
+server {
+        listen 80;
+        listen [::]:80;
+
+	listen 443 ssl;
+	listen [::]:443 ssl;
+
+	ssl_certificate /home/vladimir/MSU/insecon/task1/task1.3/lazarevva-628-ocsp-valid-chain.crt;
+	ssl_certificate_key /home/vladimir/MSU/insecon/task1/task1.3/lazarevva-628-ocsp-valid.key;
+
+        root /var/www/ocsp.valid.lazarevva.ru/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name ocsp.valid.lazarevva.ru www.ocsp.valid.lazarevva.ru;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}

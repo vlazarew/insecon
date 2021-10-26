@@ -1,0 +1,29 @@
+server {
+        listen 80;
+        listen [::]:80;
+
+	listen 443 ssl;
+	listen [::]:443 ssl;
+
+	ssl_certificate /home/vladimir/MSU/insecon/task1/task1.3/lazarevva-628-ocsp-revoked-chain.crt;
+	ssl_certificate_key /home/vladimir/MSU/insecon/task1/task1.3/lazarevva-628-ocsp-revoked.key;
+
+        root /var/www/ocsp.revoked.lazarevva.ru/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name ocsp.revoked.lazarevva.ru www.ocsp.revoked.lazarevva.ru;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+
+server {
+	listen 127.0.0.1:80;
+
+	server_name ocsp.lazarevva.ru www.ocsp.lazarevva.ru;
+
+	location / {
+	    proxy_pass http://127.0.0.1:2560;
+	}
+}

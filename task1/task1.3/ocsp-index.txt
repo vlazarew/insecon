@@ -1,0 +1,2 @@
+R	220124213806Z	211026213806Z	3B6ADA9AA63E30F794115AA2D93BC3A8D096250B	unknown	/C=RU/ST=Moscow/L=Moscow/O=lazarevva/OU=lazarevva P3/CN=lazarevva OCSP Revoked/emailAddress=vlazarew@ispras.ru
+V	220124213806Z		3B6ADA9AA63E30F794115AA2D93BC3A8D096250A	unknown	/C=RU/ST=Moscow/L=Moscow/O=lazarevva/OU=lazarevva P3/CN=lazarevva OCSP Valid/emailAddress=vlazarew@ispras.ru

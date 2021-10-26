@@ -1,0 +1,8 @@
+basicConstraints = CA:false
+keyUsage = critical, digitalSignature
+extendedKeyUsage = critical,serverAuth,clientAuth
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.0 = basic.lazarevva.ru
+DNS.1 = basic.lazarevva.com

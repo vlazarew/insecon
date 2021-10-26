@@ -1,0 +1,2 @@
+basicConstraints = critical,CA:true,pathlen:0
+keyUsage = critical, digitalSignature, keyCertSign, cRLSign

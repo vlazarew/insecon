@@ -1,0 +1,5 @@
+basicConstraints = CA:false
+keyUsage = critical, digitalSignature
+extendedKeyUsage = critical,serverAuth,clientAuth
+subjectAltName = DNS:crl.valid.lazarevva.ru
+crlDistributionPoints = URI:http://crl.lazarevva.ru
