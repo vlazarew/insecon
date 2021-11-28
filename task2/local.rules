@@ -1,0 +1,29 @@
+# Lazarev Vladimir Alexandrovich / 628
+# ----------------
+# LOCAL RULES
+# ----------------
+# This file intentionally does not come with signatures.  Put your local
+# additions here.
+# 
+# https://nmap.org/book/osdetect-methods.html - "be hero" guide.
+
+alert tcp any any -> any any (msg: "SG-1";  sid:1000001; window: 1;     flags: S;)
+alert tcp any any -> any any (msg: "SG-2";  sid:1000002; window: 63;    flags: S;)
+alert tcp any any -> any any (msg: "SG-3";  sid:1000003; window: 4;     flags: S;)
+alert tcp any any -> any any (msg: "SG-4";  sid:1000004; window: 4;     flags: S;)
+alert tcp any any -> any any (msg: "SG-5";  sid:1000005; window: 16;    flags: S;)
+alert tcp any any -> any any (msg: "SG-6";  sid:1000006; window: 512;   flags: S;)
+
+alert icmp any any -> any any (msg: "IE-1"; sid:1000007; itype: 8;      pcre: "/^\x00{120}$/";  fragbits: +D; tos: 0; icode: 9; icmp_seq: 295;)
+alert icmp any any -> any any (msg: "IE-2"; sid:1000008; itype: 8;      pcre: "/^\x00{150}$/";                tos: 4; icode: 0; icmp_seq: 296;)
+
+alert tcp any any -> any any (msg: "ECN-1"; sid:1000009; window: 3;     flags: +SCE;            ack: 0;)
+
+alert tcp any any -> any any (msg: "T-2";   sid:1000010; window: 128;   flags: 0;               fragbits: +D;)
+alert tcp any any -> any any (msg: "T-3";   sid:1000011; window: 256;   flags: +SFUP;           fragbits: !D;)
+alert tcp any any -> any any (msg: "T-4";   sid:1000012; window: 1024;  flags: +A;              fragbits: +D;)
+alert tcp any any -> any any (msg: "T-5";   sid:1000013; window: 31337; flags: +S;              fragbits: !D;)
+alert tcp any any -> any any (msg: "T-6";   sid:1000014; window: 32768; flags: +A;              fragbits: +D;)
+alert tcp any any -> any any (msg: "T-7";   sid:1000015; window: 65535; flags: +FPU;            fragbits: !D;)
+
+alert udp any any -> any any (msg: "U-1";   sid:1000016; id: 4162;      pcre: "/^C{300}$/";)
